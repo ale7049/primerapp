@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Escuela:</strong>
+  <%= @expediente.escuela %>
+</p>
+
+<p>
+  <strong>Alumno:</strong>
+  <%= @expediente.alumno %>
+</p>
+
+<p>
+  <strong>Numero boleta:</strong>
+  <%= @expediente.numero_boleta %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @expediente.status %>
+</p>
+
+<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
+<%= link_to 'Back', expedientes_path %>

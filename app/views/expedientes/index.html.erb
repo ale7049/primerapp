@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1  class="text-center">Expedientes</h1>
+<table class="table table-responsive table-bordered">
+<table class="table text-center">
+<table class="table table-striped table-bordered table-hover table-dark">
+  <thead>
+ 
+    <tr>
+      <th class ="h5">Escuela</th>
+      <th class ="h5">Alumno</th>
+      <th class="h5">Numero boleta</th>
+      <th class="h5">Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @expedientes.each do |expediente| %>
+      <tr>
+      
+
+      
+        <td><%= expediente.escuela %></td>
+        <td><%= expediente.alumno %></td>
+        <td><%= expediente.numero_boleta %></td>
+        <td><%= expediente.status %></td>
+        <td class="h5" ><%= link_to 'ver', expediente %></td>
+        <td class= "h5"><%= link_to 'Editar', edit_expediente_path(expediente) %></td>
+        <td class= "h5"><%= link_to 'eliminar', expediente, method: :delete, data: { confirm: '¿estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo expediente', new_expediente_path %>
